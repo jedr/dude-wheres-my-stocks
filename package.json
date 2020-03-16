@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^7.1.0"
+  },
+  "resolutions": {
+    "**/mkdirp/minimist": "0.2.1"
   }
 }
