@@ -10,8 +10,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
-    "mocha": "^7.1.0"
+    "mocha": "^7.1.0",
+    "supertest": "^4.0.2"
   },
   "resolutions": {
     "**/mkdirp/minimist": "0.2.1"
