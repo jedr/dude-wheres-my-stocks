@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: docker build -t dude-wheres-my-stocks .
+
+    - name: Run tests
+      run: docker run --init --rm dude-wheres-my-stocks npm test
