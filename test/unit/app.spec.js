@@ -7,7 +7,8 @@ describe("App", () => {
     const apiMock = nock("https://finnhub.io/api/v1")
       .get("/quote")
       .query({
-        symbol: "AAPL"
+        symbol: "AAPL",
+        token: "fakeapitoken"
       })
       .reply(200, {
         c: 248.8
