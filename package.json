@@ -20,6 +20,6 @@
     "supertest": "^4.0.2"
   },
   "resolutions": {
-    "**/mkdirp/minimist": "0.2.1"
+    "**/mkdirp/minimist": "1.2.2"
   }
 }
