@@ -7,7 +7,7 @@ describe("App", () => {
     const stockPricesMock = createStockPricesMock("AAPL", 248.8)
 
     await request(app)
-      .get("/AAPL")
+      .get("/v1/AAPL")
       .expect(200)
       .expect({
         exchange: "NYSE",
@@ -22,7 +22,7 @@ describe("App", () => {
     const stockPricesMock = createOverloadedStockPricesMock()
 
     await request(app)
-      .get("/AB")
+      .get("/v1/AB")
       .expect(429)
   })
 })
