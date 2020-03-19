@@ -15,7 +15,12 @@ app.get("/:ticker", (req, res, next) => {
         currentPrice
       })
     })
-    .catch(next)
+    .catch(err => {
+      if (err.status === 429) {
+        return res.sendStatus(err.status)
+      }
+      next(err)
+    })
 })
 
 module.exports = app
