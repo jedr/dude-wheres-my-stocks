@@ -17,6 +17,14 @@ describe("App", () => {
 
     stockPricesMock.done()
   })
+
+  it("returns 429 \"Too Many Requests\" when too many requests", async () => {
+    const stockPricesMock = createOverloadedStockPricesMock()
+
+    await request(app)
+      .get("/AB")
+      .expect(429)
+  })
 })
 
 function createStockPricesMock(ticker, price) {
@@ -31,3 +39,9 @@ function createStockPricesMock(ticker, price) {
     })
 }
 
+function createOverloadedStockPricesMock() {
+  return nock("https://finnhub.io/api/v1")
+    .get("/quote")
+    .query(true)
+    .reply(429)
+}
