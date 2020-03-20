@@ -4,14 +4,14 @@ const request = require("supertest")
 
 describe("App", () => {
   it("returns current price for ticker", async () => {
-    const stockPricesMock = createStockPricesMock("AAPL", 248.8)
+    const stockPricesMock = createStockPricesMock("08N.WA", 248.8)
 
     await request(app)
-      .get("/v1/AAPL")
+      .get("/v1/08N")
       .expect(200)
       .expect({
-        exchange: "NYSE",
-        ticker: "AAPL",
+        exchange: "XWAR",
+        ticker: "08N",
         currentPrice: 248.8
       })
 
