@@ -19,8 +19,5 @@
   "devDependencies": {
     "mocha": "^7.1.1",
     "supertest": "^4.0.2"
-  },
-  "resolutions": {
-    "**/mkdirp/minimist": "1.2.2"
   }
 }
