@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "npm run test:unit",
-    "test:unit": "FINNHUB_API_KEY=fakeapitoken mocha test/unit"
+    "test:unit": "FINNHUB_API_KEY=fakeapitoken mocha test/unit --recursive"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "superagent": "^5.2.2"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "mocha": "^7.1.1",
     "supertest": "^4.0.2"
   }
