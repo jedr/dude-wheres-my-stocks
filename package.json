@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "npm run test:unit",
-    "test:unit": "FINNHUB_API_KEY=fakeapitoken mocha test/unit --recursive"
+    "test:unit": "FINNHUB_API_KEY=fakeapitoken mocha test/unit --recursive",
+    "test:e2e": "mocha test/e2e --timeout 10000"
   },
   "keywords": [],
   "author": "",
