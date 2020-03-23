@@ -6,4 +6,4 @@ ENV NODE_ENV=${NODE_ENV}
 RUN yarn --frozen-lockfile
 COPY . ./
 USER node
-CMD ["node", "./src/index.js"]
+CMD ["npm", "start"]
