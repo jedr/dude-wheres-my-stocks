@@ -1,9 +1,9 @@
 FROM node:14.13.0-alpine
 WORKDIR /app
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
-RUN yarn --frozen-lockfile
+RUN npm ci
 COPY . ./
 USER node
 CMD ["npm", "start"]

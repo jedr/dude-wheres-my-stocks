@@ -62,10 +62,9 @@ Visit `http://localhost:3000` in your browser.
 
 Requirements:
 * Node.js - the version that is used in Dockerfile. It should be the latest (non-LTS) version.
-* Yarn - the latest version of Yarn 1.
 
 ```
-yarn --frozen-lockfile
+npm ci
 FINNHUB_API_KEY=your-api-key npm start
 ```
 

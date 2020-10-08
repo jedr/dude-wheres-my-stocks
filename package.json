@@ -9,6 +9,9 @@
     "test:unit": "FINNHUB_API_KEY=fakeapitoken mocha test/unit --recursive",
     "test:e2e": "mocha test/e2e --timeout 10000"
   },
+  "engines": {
+    "yarn": "Yarn not allowed. Use npm instead."
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
