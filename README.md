@@ -1,8 +1,8 @@
-# Dude, where's my stocks?
+# Dude, where's my stocks
 
 A programming exercise to write a Node.js REST service that returns stock ticker prices.
 
-Go to https://dude-wheres-my-stocks.herokuapp.com/ to see it in action.
+Go to <https://dude-wheres-my-stocks.herokuapp.com/> to see it in action.
 
 ## Endpoints
 
@@ -12,7 +12,7 @@ Returns the current price of company's stock given the company's ticker at one o
 
 #### Request
 
-```
+```http
 /v2/:ticker
 ```
 
@@ -20,7 +20,7 @@ The `:ticker` should be the symbol of a stock traded at one of stock exchanges i
 
 #### Response
 
-```
+```js
 {
   ticker: "MSFT",
   currentPrice: 210.58
@@ -41,7 +41,7 @@ Returns the current price of company's stock given the company's ticker at the W
 
 #### Request
 
-```
+```http
 /v1/:ticker
 ```
 
@@ -49,7 +49,7 @@ The `:ticker` should be the symbol of a stock traded at the Warsaw Stock Exchang
 
 #### Response
 
-```
+```js
 {
   exchange: "XWAR",
   ticker: "CDR",
@@ -69,7 +69,7 @@ If you pass a non-existent ticker, the service will return currentPrice = 0.
 
 ### General notes
 
-To run the app, you need to pass the Finnhub API KEY. To obtain it, register at https://www.finnhub.io.
+To run the app, you need to pass the Finnhub API KEY. To obtain it, register at <https://www.finnhub.io>.
 
 If you do not pass the API key, the app might work for some time, but may quickly start returning `429 Too Many Requests`.
 
@@ -78,26 +78,28 @@ If you pass an incorrect API key, the app will return `401 Unauthorized`.
 ### Running the app in Docker
 
 Requirements:
+
 * Docker
 
-```
+```bash
 docker build -t stocks .
 docker run -it --rm --env FINNHUB_API_KEY=your-api-key --publish 3000:3000 stocks
 ```
 
-Visit `http://localhost:3000` in your browser.
+Visit <http://localhost:3000> in your browser.
 
 ### Running the app on bare metal
 
 Requirements:
+
 * Node.js - the version that is used in Dockerfile. It should be the latest (non-LTS) version.
 
-```
+```bash
 npm ci
 FINNHUB_API_KEY=your-api-key npm start
 ```
 
-Visit `http://localhost:3000` in your browser.
+Visit <http://localhost:3000> in your browser.
 
 ## Running the tests
 
@@ -110,12 +112,14 @@ End-to-end tests run the app without mocking the external API. They need your Fi
 ### Running unit tests
 
 On bare metal:
-```
+
+```bash
 npm run test:unit
 ```
 
 With Docker:
-```
+
+```bash
 docker build -t stocks .
 docker run --rm stocks npm run test:unit
 ```
@@ -123,12 +127,14 @@ docker run --rm stocks npm run test:unit
 ### Running end-to-end tests
 
 On bare metal:
-```
+
+```bash
 FINNHUB_API_KEY=your-api-key npm run test:e2e
 ```
 
 With Docker:
-```
+
+```bash
 docker build -t stocks .
 docker run --rm --env FINNHUB_API_KEY=your-api-key stocks npm run test:e2e
 ```
