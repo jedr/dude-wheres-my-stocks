@@ -61,7 +61,7 @@ Visit `http://localhost:3000` in your browser.
 ### Running the app on bare metal
 
 Requirements:
-* Node.js - the version that is used in Dockerfile. It should be the latest LTS version.
+* Node.js - the version that is used in Dockerfile. It should be the latest (non-LTS) version.
 * Yarn - the latest version of Yarn 1.
 
 ```
