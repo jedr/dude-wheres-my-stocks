@@ -6,7 +6,36 @@ Go to https://dude-wheres-my-stocks.herokuapp.com/ to see it in action.
 
 ## Endpoints
 
-### /v1/:ticker
+### /v2/:ticker
+
+Returns the current price of company's stock given the company's ticker at one of the stock exchanges in the USA.
+
+#### Request
+
+```
+/v2/:ticker
+```
+
+The `:ticker` should be the symbol of a stock traded at one of stock exchanges in the USA, e.g. `MSFT` or `GE`.
+
+#### Response
+
+```
+{
+  ticker: "MSFT",
+  currentPrice: 210.58
+}
+```
+
+The `ticker` field contains the requested ticker.
+
+The `currentPrice` field contains the current price of the stock in US dollars.
+
+If you pass a non-existent ticker, the service will return currentPrice = 0.
+
+### [DEPRECATED] /v1/:ticker
+
+DEPREACTED: This endpoint does not work correctly since Finnhub stopped offering non-US stocks in free tier. Use `/v2/:ticker` instead to get US stock prices.
 
 Returns the current price of company's stock given the company's ticker at the Warsaw Stock Exchange.
 
