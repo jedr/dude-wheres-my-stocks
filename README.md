@@ -2,6 +2,7 @@
 
 [![test](https://github.com/jedr/dude-wheres-my-stocks/workflows/Test/badge.svg)](https://github.com/jedr/dude-wheres-my-stocks/actions?query=workflow:Test)
 [![Deployment](https://heroku-badge.herokuapp.com/?app=dude-wheres-my-stocks&root=v2/MSFT&svg=1)](https://dude-wheres-my-stocks.herokuapp.com/v2/MSFT)
+[![Dependencies](https://david-dm.org/jedr/dude-wheres-my-stocks.svg)](https://david-dm.org/jedr/dude-wheres-my-stocks)
 
 A programming exercise to write a Node.js REST service that returns stock ticker prices.
 
