@@ -22,4 +22,6 @@ jobs:
       run: docker run --init --rm dude-wheres-my-stocks npm test
 
     - name: Run e2e tests
+      env:
+        FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
       run: docker run --rm --env FINNHUB_API_KEY dude-wheres-my-stocks npm run test:e2e
