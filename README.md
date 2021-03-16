@@ -6,7 +6,7 @@
 
 A programming exercise to write a Node.js REST service that returns stock ticker prices.
 
-Go to <https://dude-wheres-my-stocks.herokuapp.com/> to see it in action.
+Go to <https://dude-wheres-my-stocks.herokuapp.com/v2/GE> to see it in action.
 
 ## Endpoints
 
