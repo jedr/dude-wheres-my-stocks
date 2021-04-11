@@ -12,6 +12,8 @@ is_published=$(docker manifest inspect "${image_name}:${current_version}" > /dev
 
 docker buildx build --platform linux/arm/v7,linux/arm64,linux/amd64 --push --tag "${image_name}:${current_version}" .
 
+git config user.email "andrzej.stencel@gmail.com"
+git config user.name "jedr"
 declare tag="v${current_version}"
 git tag --annotate --message="${tag}" "${tag}"
 git push origin "${tag}"
