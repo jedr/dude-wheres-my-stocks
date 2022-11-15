@@ -1,4 +1,4 @@
-FROM node:18.10.0-alpine
+FROM node:19.1.0-alpine
 WORKDIR /app
 COPY package.json package-lock.json ./
 ARG NODE_ENV=development
