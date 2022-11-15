@@ -1,4 +1,4 @@
-const superagent = require("superagent")
+const axios = require("axios")
 
 class FinnhubApiClient {
   constructor(apiKey) {
@@ -6,20 +6,22 @@ class FinnhubApiClient {
   }
 
   async getQuote(symbol) {
-    return superagent
-      .get("https://finnhub.io/api/v1/quote")
-      .query({
-        symbol,
-        token: this.apiKey
+    return axios
+      .get("https://finnhub.io/api/v1/quote", {
+        params: {
+          symbol,
+          token: this.apiKey
+        },
       })
       .then(res => ({
-        currentPrice: res.body.c,
-        previousClosePrice: res.body.pc,
-        openPrice: res.body.o,
-        highPrice: res.body.h,
-        lowPrice: res.body.l,
-        timestamp: res.body.t
-      }))
+        currentPrice: res.data.c,
+        previousClosePrice: res.data.pc,
+        openPrice: res.data.o,
+        highPrice: res.data.h,
+        lowPrice: res.data.l,
+        timestamp: res.data.t
+      })
+    )
   }
 }
 
