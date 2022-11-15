@@ -16,8 +16,8 @@ v1Router.get("/:ticker", async (req, res, next) => {
       currentPrice
     })
   } catch (err) {
-    if (err.status === 429) {
-      return res.sendStatus(err.status)
+    if (err.response.status === 429) {
+      return res.sendStatus(err.response.status)
     }
     next(err)
   }

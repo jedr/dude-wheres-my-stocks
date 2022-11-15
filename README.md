@@ -16,7 +16,7 @@ Returns the current price of company's stock given the company's ticker at one o
 
 #### Request
 
-```http
+```
 /v2/:ticker
 ```
 
@@ -45,7 +45,7 @@ Returns the current price of company's stock given the company's ticker at the W
 
 #### Request
 
-```http
+```
 /v1/:ticker
 ```
 
